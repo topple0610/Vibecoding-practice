@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个美观、功能丰富的待办事项应用，帮助您高效管理日常任务">
+  <meta name="keywords" content="待办事项, todo, 任务管理, 效率工具">
+  <meta name="author" content="Todo App">
+  <title>Todo App - 精美的待办事项管理</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>✨ Todo App</h1>
+      <p>让您的任务井井有条</p>
+    </header>
+
+    <!-- Main Card -->
+    <main class="glass-card">
+      <!-- Input Section -->
+      <section class="input-section">
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="todoInput" 
+            class="todo-input" 
+            placeholder="添加新任务..." 
+            aria-label="新任务输入框"
+            autocomplete="off"
+          >
+          <button 
+            id="addBtn" 
+            class="add-btn" 
+            aria-label="添加任务"
+          >
+            ➕ 添加
+          </button>
+        </div>
+      </section>
+
+      <!-- Filters -->
+      <div class="filters">
+        <button 
+          id="filterAll" 
+          class="filter-btn active" 
+          data-filter="all"
+          aria-label="显示所有任务"
+        >
+          全部
+        </button>
+        <button 
+          id="filterActive" 
+          class="filter-btn" 
+          data-filter="active"
+          aria-label="显示进行中的任务"
+        >
+          进行中
+        </button>
+        <button 
+          id="filterCompleted" 
+          class="filter-btn" 
+          data-filter="completed"
+          aria-label="显示已完成的任务"
+        >
+          已完成
+        </button>
+      </div>
+
+      <!-- Todo List -->
+      <ul id="todoList" class="todo-list" role="list">
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-state-icon">📝</div>
+          <p>还没有任务，开始添加吧！</p>
+        </div>
+      </ul>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="stats">
+          <span id="stats">
+            共 <strong id="totalCount">0</strong> 个任务，
+            已完成 <strong id="completedCount">0</strong> 个
+          </span>
+        </div>
+        <button 
+          id="clearCompleted" 
+          class="clear-btn"
+          aria-label="清除已完成的任务"
+        >
+          🗑️ 清除已完成
+        </button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
