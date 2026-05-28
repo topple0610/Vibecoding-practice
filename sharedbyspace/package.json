@@ -1,0 +1,23 @@
+{
+  "name": "sharedbyspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check:functions": "node --check functions/index.js"
+  },
+  "dependencies": {
+    "firebase": "^12.13.0",
+    "lucide-react": "^0.511.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "firebase-tools": "^15.18.0",
+    "vite": "^6.3.5"
+  }
+}

@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function approved() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && firestore.get(/databases/(default)/documents/approvedEmails/$(request.auth.token.email)).data.active == true;
+    }
+
+    match /ideas/{userId}/{fileName} {
+      allow read, delete: if approved();
+      allow create, update: if approved()
+        && request.auth.uid == userId
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}
