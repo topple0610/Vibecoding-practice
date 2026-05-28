@@ -1,10 +1,8 @@
 node_modules
+functions/node_modules
 dist
 .firebase
-.vercel
-firebase-debug.log
-functions/node_modules
 .env.local
+firebase-debug.log
 *-firebase-adminsdk-*.json
 service-account*.json
-.vercel
